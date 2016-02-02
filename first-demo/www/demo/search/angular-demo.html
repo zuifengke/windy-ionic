@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="searchApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../../../Scripts/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="AppCtrl">
+    <h1>Search Page</h1>
+    <form>
+        <label>Search : </label>
+        <input type="text" name="query" ng-model="query"
+               required>
+        <input type="button" ng-disabled="!query" value="Search"
+               ng-click="search()">
+    </form>
+    <div ng-repeat="res in results">
+        <h2>{{res.heading}}</h2>
+        <span>{{res.summary}}</span>
+        <a ng-href="{{res.link}}">{{res.linkText}}</a>
+    </div>
+</body>
+</html>
